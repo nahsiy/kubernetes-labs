@@ -39,8 +39,8 @@ ne sont ajoutées qu'après réalisation des exercices.
 - [x] Ajouter un validateur local lisible.
 - [x] Ajouter une CI qui vérifie le dépôt sans prétendre valider un cluster live.
 - [x] Vérifier la confidentialité et la qualité du diff.
-- [ ] Créer un commit local de référence.
-- [ ] Publier le dépôt public après validation locale.
+- [x] Créer un commit local de référence.
+- [x] Publier le dépôt public après validation locale.
 
 ## Validation du premier lot
 
