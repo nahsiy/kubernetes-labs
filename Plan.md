@@ -22,8 +22,8 @@ ne sont ajoutées qu'après réalisation des exercices.
 
 | Phase | Contenu | Statut |
 | --- | --- | --- |
-| 0 | README, prérequis, environnement local et exercice de vérification | En cours |
-| 1 | Pods, Deployments, Services et découverte DNS | À faire |
+| 0 | README, prérequis, environnement local et exercice de vérification | Terminé |
+| 1 | Pods, Deployments, Services et découverte DNS | En cours |
 | 2 | Configuration, Secrets, probes et ressources | À faire |
 | 3 | Stockage, Ingress et exposition HTTP | À faire |
 | 4 | ServiceAccounts, RBAC et NetworkPolicies | À faire |
