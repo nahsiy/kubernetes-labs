@@ -9,6 +9,15 @@ if ! kind get clusters | grep -qx "$cluster_name"; then
   exit 1
 fi
 
+if ! kubectl --context "$context" wait \
+  --for=condition=Ready node \
+  --all \
+  --timeout=180s; then
+  printf '[FAIL] Tous les nœuds ne sont pas devenus Ready dans le délai imparti.\n'
+  kubectl --context "$context" get nodes -o wide
+  exit 1
+fi
+
 node_count="$(kubectl --context "$context" get nodes --no-headers | wc -l | tr -d ' ')"
 control_plane_count="$(kubectl --context "$context" get nodes \
   -l node-role.kubernetes.io/control-plane --no-headers | wc -l | tr -d ' ')"
@@ -39,4 +48,3 @@ kubectl --context "$context" wait \
 
 printf '[PASS] Cluster %s : 1 control plane, 2 workers, tous Ready.\n' "$cluster_name"
 kubectl --context "$context" get nodes -o wide
-
